@@ -33,6 +33,11 @@ output_path = 'video_doble.mp4'
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 out = cv2.VideoWriter(output_path, fourcc, fps, (width * 2, height))
 
+# Output video: only skeleton
+skeleton_output_path = 'video_skeleton.mp4'
+out_skeleton = cv2.VideoWriter(skeleton_output_path, fourcc, fps, (width, height))
+
+
 while cap.isOpened():
     success, frame = cap.read()
     if not success:
@@ -94,11 +99,12 @@ while cap.isOpened():
     # Display and save
     cv2.imshow("Original + Esqueleto", combined_frame)
     out.write(combined_frame)
-
+    out_skeleton.write(skeleton_frame)  # Save skeleton-only frame
     if cv2.waitKey(1) & 0xFF == 27:  # ESC key to exit
         break
 
 # Release resources
 cap.release()
 out.release()
+out_skeleton.release()
 cv2.destroyAllWindows()
