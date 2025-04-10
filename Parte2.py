@@ -6,7 +6,7 @@ from ultralytics import YOLO
 # Initialize YOLO model
 model = YOLO("yolov8n.pt")
 
-video_path = '/Users/juanluis/Documents/educacion/U/semestres/semestre_10/Computer_vision/Proyecto2_vision/Danzan3.mp4'
+video_path = 'Danzan3.mp4'
 cap = cv2.VideoCapture(video_path)
 
 # Initialize MediaPipe
