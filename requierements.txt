@@ -4,3 +4,8 @@ numpy>=1.21.0
 ultralytics>=8.0.0
 torch>=1.9.0
 torchvision>=0.10.0
+
+# Optional but recommended to prevent some runtime issues
+PyYAML>=5.4.1
+matplotlib>=3.4.3
+pandas>=1.3.0
